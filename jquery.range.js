@@ -129,7 +129,7 @@
 				e = e.originalEvent.changedTouches[0];
 			}
 
-			var position = e.clientX - this.domNode.offset().left;
+			var position = e.clientX - this.domNode.offset().left + $(document).scrollLeft();
 			this.domNode.trigger('change', [this, pointer, position]);
 		},
 		onDragEnd: function(e) {
